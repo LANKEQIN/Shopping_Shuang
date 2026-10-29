@@ -1,0 +1,1280 @@
+{
+  "version": 1,
+  "categories": [
+    "数码",
+    "服饰",
+    "美食",
+    "家居",
+    "美妆",
+    "潮玩",
+    "运动",
+    "宠物",
+    "解压"
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Apple iPhone 16 Pro Max 1TB 钛金属",
+      "emoji": "📱",
+      "category": "数码",
+      "store": "京喜自营旗舰店",
+      "price": 9999.0,
+      "originalPrice": 16000.0,
+      "sold": 32,
+      "rating": 4.9,
+      "tags": [
+        "自营",
+        "百亿补贴",
+        "12期免息"
+      ],
+      "desc": "钛金属机身，A18 Pro 芯片，拍月亮都清晰。买它，然后继续用旧手机。"
+    },
+    {
+      "id": 2,
+      "name": "小米 15 Ultra 影像旗舰",
+      "emoji": "📲",
+      "category": "数码",
+      "store": "小米官方旗舰店",
+      "price": 6499.0,
+      "originalPrice": 10400.0,
+      "sold": 21,
+      "rating": 4.9,
+      "tags": [
+        "百亿补贴",
+        "12期免息"
+      ],
+      "desc": "一英寸大底，随手一拍就是壁纸。缺点是相册会越来越占内存。"
+    },
+    {
+      "id": 3,
+      "name": "华为 Mate X6 折叠屏",
+      "emoji": "📱",
+      "category": "数码",
+      "store": "华为官方旗舰店",
+      "price": 12999.0,
+      "originalPrice": 20800.0,
+      "sold": 8,
+      "rating": 4.9,
+      "tags": [
+        "自营",
+        "新品",
+        "免息"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 4,
+      "name": "AirPods Pro 3 主动降噪耳机",
+      "emoji": "🎧",
+      "category": "数码",
+      "store": "京喜自营旗舰店",
+      "price": 1299.0,
+      "originalPrice": 2100.0,
+      "sold": 45,
+      "rating": 4.9,
+      "tags": [
+        "自营",
+        "百亿补贴"
+      ],
+      "desc": "戴上它，老板的呼喊就像隔着一条银河。解压首选。"
+    },
+    {
+      "id": 5,
+      "name": "客制化机械键盘 麻将音",
+      "emoji": "🎹",
+      "category": "数码",
+      "store": "键盘研究所",
+      "price": 499.0,
+      "originalPrice": 798.0,
+      "sold": 12,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "7天无理由"
+      ],
+      "desc": "敲击声清脆，像在打麻将，办公室解压神器。"
+    },
+    {
+      "id": 6,
+      "name": "富士拍立得 mini 99",
+      "emoji": "📷",
+      "category": "数码",
+      "store": "富士官方旗舰店",
+      "price": 699.0,
+      "originalPrice": 1118.0,
+      "sold": 8,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "新品"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 7,
+      "name": "20000mAh 快充充电宝",
+      "emoji": "🔋",
+      "category": "数码",
+      "store": "电小二旗舰店",
+      "price": 129.0,
+      "originalPrice": 206.0,
+      "sold": 66,
+      "rating": 4.7,
+      "tags": [
+        "百亿补贴",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 8,
+      "name": "智能运动手表 S9",
+      "emoji": "⌚",
+      "category": "数码",
+      "store": "小米官方旗舰店",
+      "price": 899.0,
+      "originalPrice": 1438.0,
+      "sold": 21,
+      "rating": 4.8,
+      "tags": [
+        "自营",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 9,
+      "name": "哈曼卡顿蓝牙音箱",
+      "emoji": "🎵",
+      "category": "数码",
+      "store": "哈曼卡顿旗舰店",
+      "price": 259.0,
+      "originalPrice": 414.0,
+      "sold": 17,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "7天无理由"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 10,
+      "name": "扫地机器人 Pro 自清洁",
+      "emoji": "🤖",
+      "category": "数码",
+      "store": "石头科技旗舰店",
+      "price": 1999.0,
+      "originalPrice": 3200.0,
+      "sold": 9,
+      "rating": 4.9,
+      "tags": [
+        "百亿补贴",
+        "自营"
+      ],
+      "desc": "它替你扫地，你替它加油。家里的地干净了，心里的地也干净了。"
+    },
+    {
+      "id": 11,
+      "name": "Switch 2 游戏机 国行",
+      "emoji": "🎮",
+      "category": "数码",
+      "store": "任天堂官方店",
+      "price": 2999.0,
+      "originalPrice": 4800.0,
+      "sold": 23,
+      "rating": 4.9,
+      "tags": [
+        "自营",
+        "免息"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 12,
+      "name": "纯棉 oversize T恤 多色",
+      "emoji": "👕",
+      "category": "服饰",
+      "store": "摆烂研究所",
+      "price": 39.9,
+      "originalPrice": 89.0,
+      "sold": 128,
+      "rating": 4.8,
+      "tags": [
+        "百亿补贴",
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 13,
+      "name": "加绒加厚卫衣 情侣款",
+      "emoji": "🧥",
+      "category": "服饰",
+      "store": "慢生活杂货铺",
+      "price": 89.0,
+      "originalPrice": 199.0,
+      "sold": 88,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "7天无理由"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 14,
+      "name": "法式碎花连衣裙",
+      "emoji": "👗",
+      "category": "服饰",
+      "store": "白玉楼旗舰店",
+      "price": 129.0,
+      "originalPrice": 299.0,
+      "sold": 34,
+      "rating": 4.7,
+      "tags": [
+        "新品",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 15,
+      "name": "空军一号复古球鞋",
+      "emoji": "👟",
+      "category": "服饰",
+      "store": "潮流前线",
+      "price": 699.0,
+      "originalPrice": 899.0,
+      "sold": 56,
+      "rating": 4.9,
+      "tags": [
+        "自营",
+        "百亿补贴"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 16,
+      "name": "三合一冲锋衣 防风防水",
+      "emoji": "🥼",
+      "category": "服饰",
+      "store": "骆驼户外旗舰店",
+      "price": 399.0,
+      "originalPrice": 799.0,
+      "sold": 28,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "7天无理由"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 17,
+      "name": "日系纯棉船袜 5双",
+      "emoji": "🧦",
+      "category": "服饰",
+      "store": "袜子工厂店",
+      "price": 19.9,
+      "originalPrice": 49.9,
+      "sold": 233,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 18,
+      "name": "韩版渔夫帽 显脸小",
+      "emoji": "🧢",
+      "category": "服饰",
+      "store": "帽子屋",
+      "price": 29.9,
+      "originalPrice": 79.0,
+      "sold": 45,
+      "rating": 4.7,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 19,
+      "name": "珊瑚绒三层睡衣",
+      "emoji": "🛌",
+      "category": "服饰",
+      "store": "睡眠研究所",
+      "price": 69.0,
+      "originalPrice": 149.0,
+      "sold": 39,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "7天无理由"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 20,
+      "name": "真丝遮光眼罩",
+      "emoji": "😴",
+      "category": "服饰",
+      "store": "晚安旗舰店",
+      "price": 29.9,
+      "originalPrice": 69.0,
+      "sold": 61,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 21,
+      "name": "羊绒混纺围巾",
+      "emoji": "🧣",
+      "category": "服饰",
+      "store": "白玉楼旗舰店",
+      "price": 59.0,
+      "originalPrice": 129.0,
+      "sold": 22,
+      "rating": 4.7,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 22,
+      "name": "麻辣王子辣条 20包",
+      "emoji": "🌶️",
+      "category": "美食",
+      "store": "辣条总动员",
+      "price": 9.9,
+      "originalPrice": 19.9,
+      "sold": 89,
+      "rating": 4.8,
+      "tags": [
+        "9.9包邮",
+        "百亿补贴"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 23,
+      "name": "柳州螺蛳粉 5袋",
+      "emoji": "🍜",
+      "category": "美食",
+      "store": "螺蛳粉工厂店",
+      "price": 29.9,
+      "originalPrice": 49.9,
+      "sold": 120,
+      "rating": 4.9,
+      "tags": [
+        "百亿补贴",
+        "包邮"
+      ],
+      "desc": "闻着臭，吃着香，煮的时候室友会搬走——独占厨房的快乐。"
+    },
+    {
+      "id": 24,
+      "name": "重庆老火锅底料 500g",
+      "emoji": "🥘",
+      "category": "美食",
+      "store": "山城味道",
+      "price": 19.9,
+      "originalPrice": 39.9,
+      "sold": 45,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 25,
+      "name": "手打柠檬茶 6杯",
+      "emoji": "🍋",
+      "category": "美食",
+      "store": "柠檬茶铺",
+      "price": 9.9,
+      "originalPrice": 19.9,
+      "sold": 66,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 26,
+      "name": "乐事薯片 10袋大礼包",
+      "emoji": "🍟",
+      "category": "美食",
+      "store": "零食很忙",
+      "price": 29.9,
+      "originalPrice": 49.9,
+      "sold": 88,
+      "rating": 4.8,
+      "tags": [
+        "百亿补贴",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 27,
+      "name": "生巧礼盒 24粒",
+      "emoji": "🍫",
+      "category": "美食",
+      "store": "甜蜜研究所",
+      "price": 39.9,
+      "originalPrice": 79.0,
+      "sold": 33,
+      "rating": 4.9,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 28,
+      "name": "自热米饭 6盒",
+      "emoji": "🍚",
+      "category": "美食",
+      "store": "懒人食堂",
+      "price": 29.9,
+      "originalPrice": 59.9,
+      "sold": 51,
+      "rating": 4.7,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 29,
+      "name": "梦龙冰淇淋 12支",
+      "emoji": "🍦",
+      "category": "美食",
+      "store": "冰鲜直送",
+      "price": 59.0,
+      "originalPrice": 99.0,
+      "sold": 27,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "百亿补贴"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 30,
+      "name": "冷萃咖啡液 30条",
+      "emoji": "☕",
+      "category": "美食",
+      "store": "咖啡续命局",
+      "price": 59.0,
+      "originalPrice": 129.0,
+      "sold": 43,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "百亿补贴"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 31,
+      "name": "芋泥麻薯蛋糕 6寸",
+      "emoji": "🍰",
+      "category": "美食",
+      "store": "芋泥啵啵店",
+      "price": 29.9,
+      "originalPrice": 59.0,
+      "sold": 18,
+      "rating": 4.7,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 32,
+      "name": "无火香薰 白茶味",
+      "emoji": "🕯️",
+      "category": "家居",
+      "store": "气味图书馆",
+      "price": 39.0,
+      "originalPrice": 99.0,
+      "sold": 31,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 33,
+      "name": "云朵抱枕 60cm",
+      "emoji": "☁️",
+      "category": "家居",
+      "store": "软绵绵家居",
+      "price": 59.0,
+      "originalPrice": 129.0,
+      "sold": 42,
+      "rating": 4.9,
+      "tags": [
+        "包邮",
+        "百亿补贴"
+      ],
+      "desc": "抱着它睡觉，像抱住一团云。适合下班后不想说话的人类。"
+    },
+    {
+      "id": 34,
+      "name": "新疆长绒棉四件套",
+      "emoji": "🛏️",
+      "category": "家居",
+      "store": "睡眠研究所",
+      "price": 199.0,
+      "originalPrice": 399.0,
+      "sold": 25,
+      "rating": 4.8,
+      "tags": [
+        "自营",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 35,
+      "name": "折叠收纳箱 3个装",
+      "emoji": "📦",
+      "category": "家居",
+      "store": "收纳整理局",
+      "price": 29.9,
+      "originalPrice": 69.0,
+      "sold": 77,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 36,
+      "name": "手作陶瓷马克杯",
+      "emoji": "🍵",
+      "category": "家居",
+      "store": "慢慢喝陶瓷店",
+      "price": 19.9,
+      "originalPrice": 49.0,
+      "sold": 58,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 37,
+      "name": "国AA级护眼台灯",
+      "emoji": "💡",
+      "category": "家居",
+      "store": "明基旗舰店",
+      "price": 89.0,
+      "originalPrice": 199.0,
+      "sold": 26,
+      "rating": 4.8,
+      "tags": [
+        "自营",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 38,
+      "name": "懒人豆袋沙发",
+      "emoji": "🪑",
+      "category": "家居",
+      "store": "躺平家具店",
+      "price": 299.0,
+      "originalPrice": 599.0,
+      "sold": 14,
+      "rating": 4.7,
+      "tags": [
+        "包邮",
+        "7天无理由"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 39,
+      "name": "踩屎感厚底拖鞋",
+      "emoji": "🩴",
+      "category": "家居",
+      "store": "踩云朵旗舰店",
+      "price": 19.9,
+      "originalPrice": 59.0,
+      "sold": 199,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮",
+        "百亿补贴"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 40,
+      "name": "珊瑚绒浴巾三件套",
+      "emoji": "🛁",
+      "category": "家居",
+      "store": "软绵绵家居",
+      "price": 39.9,
+      "originalPrice": 99.0,
+      "sold": 37,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 41,
+      "name": "永不凋谢香皂玫瑰",
+      "emoji": "🌹",
+      "category": "家居",
+      "store": "白玉楼旗舰店",
+      "price": 49.0,
+      "originalPrice": 129.0,
+      "sold": 41,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "7天无理由"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 42,
+      "name": "丝绒哑光口红",
+      "emoji": "💄",
+      "category": "美妆",
+      "store": "花西子旗舰店",
+      "price": 79.0,
+      "originalPrice": 199.0,
+      "sold": 47,
+      "rating": 4.8,
+      "tags": [
+        "百亿补贴",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 43,
+      "name": "熬夜急救面膜 30片",
+      "emoji": "🧖",
+      "category": "美妆",
+      "store": "补水研究所",
+      "price": 49.0,
+      "originalPrice": 129.0,
+      "sold": 63,
+      "rating": 4.7,
+      "tags": [
+        "百亿补贴",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 44,
+      "name": "木质调小众香水 50ml",
+      "emoji": "🌸",
+      "category": "美妆",
+      "store": "气味图书馆",
+      "price": 199.0,
+      "originalPrice": 399.0,
+      "sold": 19,
+      "rating": 4.9,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 45,
+      "name": "24h持妆粉底液",
+      "emoji": "🧴",
+      "category": "美妆",
+      "store": "完美日记旗舰店",
+      "price": 129.0,
+      "originalPrice": 299.0,
+      "sold": 22,
+      "rating": 4.7,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 46,
+      "name": "大地色眼影盘 12色",
+      "emoji": "🎨",
+      "category": "美妆",
+      "store": "橘朵旗舰店",
+      "price": 89.0,
+      "originalPrice": 199.0,
+      "sold": 33,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 47,
+      "name": "樱花护手霜 3支",
+      "emoji": "🌷",
+      "category": "美妆",
+      "store": "护手研究所",
+      "price": 19.9,
+      "originalPrice": 49.0,
+      "sold": 55,
+      "rating": 4.8,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 48,
+      "name": "解压捏捏乐 5个装",
+      "emoji": "🫠",
+      "category": "潮玩",
+      "store": "解压研究所",
+      "price": 9.9,
+      "originalPrice": 29.9,
+      "sold": 210,
+      "rating": 4.9,
+      "tags": [
+        "9.9包邮",
+        "百亿补贴"
+      ],
+      "desc": "捏它！捏爆它！捏到它变形，你的班味也散了。办公室合法发泄物。"
+    },
+    {
+      "id": 49,
+      "name": "电子木鱼 功德+1",
+      "emoji": "🪘",
+      "category": "潮玩",
+      "store": "功德无量店",
+      "price": 19.9,
+      "originalPrice": 69.0,
+      "sold": 156,
+      "rating": 4.8,
+      "tags": [
+        "9.9包邮",
+        "百亿补贴"
+      ],
+      "desc": "敲一下，功德+1；敲一万下，烦恼-10000。静音模式，不扰邻。"
+    },
+    {
+      "id": 50,
+      "name": "盲盒手办 第12弹",
+      "emoji": "🧸",
+      "category": "潮玩",
+      "store": "泡泡玛特旗舰店",
+      "price": 59.0,
+      "originalPrice": 99.0,
+      "sold": 38,
+      "rating": 4.8,
+      "tags": [
+        "包邮",
+        "新品"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 51,
+      "name": "1000片治愈拼图",
+      "emoji": "🧩",
+      "category": "潮玩",
+      "store": "拼图俱乐部",
+      "price": 39.9,
+      "originalPrice": 99.0,
+      "sold": 30,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 52,
+      "name": "大耳狗毛绒公仔",
+      "emoji": "🐶",
+      "category": "潮玩",
+      "store": "三丽鸥旗舰店",
+      "price": 89.0,
+      "originalPrice": 199.0,
+      "sold": 44,
+      "rating": 4.9,
+      "tags": [
+        "包邮",
+        "百亿补贴"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 53,
+      "name": "太空积木 2000粒",
+      "emoji": "🚀",
+      "category": "潮玩",
+      "store": "积木星球",
+      "price": 99.0,
+      "originalPrice": 299.0,
+      "sold": 12,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 54,
+      "name": "骂人鸭 复读机",
+      "emoji": "🦆",
+      "category": "潮玩",
+      "store": "摆烂研究所",
+      "price": 29.9,
+      "originalPrice": 89.0,
+      "sold": 95,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": "你骂一句，它学一句，声调还很欠揍。已确诊为家中最解压的生物。"
+    },
+    {
+      "id": 55,
+      "name": "桌面减压骰子",
+      "emoji": "🎲",
+      "category": "潮玩",
+      "store": "解压研究所",
+      "price": 9.9,
+      "originalPrice": 39.0,
+      "sold": 130,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 56,
+      "name": "加厚防滑瑜伽垫",
+      "emoji": "🧘",
+      "category": "运动",
+      "store": "Keep旗舰店",
+      "price": 59.0,
+      "originalPrice": 129.0,
+      "sold": 43,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 57,
+      "name": "可调节哑铃 20kg",
+      "emoji": "🏋️",
+      "category": "运动",
+      "store": "舒华旗舰店",
+      "price": 199.0,
+      "originalPrice": 399.0,
+      "sold": 17,
+      "rating": 4.8,
+      "tags": [
+        "自营",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 58,
+      "name": "燃脂计数跳绳",
+      "emoji": "🪢",
+      "category": "运动",
+      "store": "运动工厂",
+      "price": 19.9,
+      "originalPrice": 59.0,
+      "sold": 88,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 59,
+      "name": "运动护腕 2只装",
+      "emoji": "🩹",
+      "category": "运动",
+      "store": "运动工厂",
+      "price": 19.9,
+      "originalPrice": 49.0,
+      "sold": 24,
+      "rating": 4.7,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 60,
+      "name": "冻干双拼猫粮 5kg",
+      "emoji": "🐱",
+      "category": "宠物",
+      "store": "喵星人驿站",
+      "price": 129.0,
+      "originalPrice": 259.0,
+      "sold": 41,
+      "rating": 4.9,
+      "tags": [
+        "百亿补贴",
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 61,
+      "name": "瓦楞纸猫抓板窝",
+      "emoji": "🐈",
+      "category": "宠物",
+      "store": "喵星人驿站",
+      "price": 39.9,
+      "originalPrice": 89.0,
+      "sold": 52,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 62,
+      "name": "逗猫棒 3件套",
+      "emoji": "🪶",
+      "category": "宠物",
+      "store": "喵星人驿站",
+      "price": 9.9,
+      "originalPrice": 29.9,
+      "sold": 78,
+      "rating": 4.8,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 63,
+      "name": "狗狗冻干零食桶",
+      "emoji": "🐕",
+      "category": "宠物",
+      "store": "汪星人便利店",
+      "price": 39.9,
+      "originalPrice": 79.0,
+      "sold": 29,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 64,
+      "name": "暴富符 电子版",
+      "emoji": "🧧",
+      "category": "解压",
+      "store": "玄学研究所",
+      "price": 0.99,
+      "originalPrice": 9.9,
+      "sold": 320,
+      "rating": 4.9,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": "一张可以无限复制的电子暴富符，保存即生效（在法律允许的范围内）。"
+    },
+    {
+      "id": 65,
+      "name": "一夜暴富盲盒",
+      "emoji": "🎁",
+      "category": "解压",
+      "store": "玄学研究所",
+      "price": 9.9,
+      "originalPrice": 99.0,
+      "sold": 188,
+      "rating": 4.8,
+      "tags": [
+        "百亿补贴",
+        "9.9包邮"
+      ],
+      "desc": "里面可能是暴富，也可能是一张纸条写着“想得美”。惊喜感拉满。"
+    },
+    {
+      "id": 66,
+      "name": "晚安短信包 30天",
+      "emoji": "💌",
+      "category": "解压",
+      "store": "晚安旗舰店",
+      "price": 1.99,
+      "originalPrice": 19.9,
+      "sold": 120,
+      "rating": 4.9,
+      "tags": [
+        "包邮"
+      ],
+      "desc": "每晚 23:00，准时收到一句“今天辛苦了，明天再摆”。"
+    },
+    {
+      "id": 67,
+      "name": "夸夸群服务 1小时",
+      "emoji": "💬",
+      "category": "解压",
+      "store": "彩虹屁工厂",
+      "price": 1.99,
+      "originalPrice": 19.9,
+      "sold": 210,
+      "rating": 4.9,
+      "tags": [
+        "包邮"
+      ],
+      "desc": "无论你说什么，都有人夸你。连“我今天什么都没干”都能被夸成松弛感。"
+    },
+    {
+      "id": 68,
+      "name": "代骂前任服务 文明版",
+      "emoji": "📢",
+      "category": "解压",
+      "store": "彩虹屁工厂",
+      "price": 0.99,
+      "originalPrice": 9.9,
+      "sold": 89,
+      "rating": 4.7,
+      "tags": [
+        "9.9包邮"
+      ],
+      "desc": "全程文明用语，只吐槽不伤人，骂完还会祝你前程似锦。"
+    },
+    {
+      "id": 69,
+      "name": "电子榨菜合集",
+      "emoji": "🍱",
+      "category": "解压",
+      "store": "下饭研究所",
+      "price": 1.99,
+      "originalPrice": 9.9,
+      "sold": 66,
+      "rating": 4.8,
+      "tags": [
+        "包邮"
+      ],
+      "desc": ""
+    },
+    {
+      "id": 70,
+      "name": "办公室发泄球 3个",
+      "emoji": "🤜",
+      "category": "解压",
+      "store": "解压研究所",
+      "price": 9.9,
+      "originalPrice": 39.0,
+      "sold": 140,
+      "rating": 4.8,
+      "tags": [
+        "9.9包邮",
+        "百亿补贴"
+      ],
+      "desc": ""
+    }
+  ],
+  "banners": [
+    {
+      "title": "百亿补贴 真香节",
+      "subtitle": "全网低价 · 假一赔十（赔的是快乐）",
+      "emoji": "🛍️",
+      "tag": "限时补贴",
+      "colors": [
+        4294922543,
+        4292682870
+      ],
+      "target": "subsidy"
+    },
+    {
+      "title": "深夜解压专场",
+      "subtitle": "捏爆压力 · 全场 9.9 起",
+      "emoji": "🫠",
+      "tag": "情绪价值拉满",
+      "colors": [
+        4286336511,
+        4294847573
+      ],
+      "target": "cut"
+    },
+    {
+      "title": "直播间 0.01 元起",
+      "subtitle": "主播替你花钱 · 手慢无",
+      "emoji": "📺",
+      "tag": "直播中",
+      "colors": [
+        4279181351,
+        4281095012
+      ],
+      "target": "live"
+    },
+    {
+      "title": "整点秒杀 全场免单",
+      "subtitle": "库存狂掉 · 抢到就是赚到",
+      "emoji": "⚡",
+      "tag": "限时疯抢",
+      "colors": [
+        4294416158,
+        4294955520
+      ],
+      "target": "seckill"
+    }
+  ],
+  "liveRooms": [
+    {
+      "title": "深夜解压局｜捏捏乐买一送一",
+      "host": "解压小爽",
+      "hostEmoji": "🫠",
+      "viewers": "12.8万",
+      "colors": [
+        4286336511,
+        4294847573
+      ],
+      "productIds": [
+        48,
+        49,
+        55,
+        67
+      ],
+      "notice": "今晚不卖货，只卖快乐。捏一下，压力就没了。"
+    },
+    {
+      "title": "零食开箱吃到饱",
+      "host": "干饭阿蛮",
+      "hostEmoji": "🍜",
+      "viewers": "5.3万",
+      "colors": [
+        4294930499,
+        4294947584
+      ],
+      "productIds": [
+        22,
+        23,
+        26,
+        27
+      ],
+      "notice": "边吃边播，卡路里已由主播承担。"
+    },
+    {
+      "title": "数码捡漏夜｜全网底价",
+      "host": "老李严选",
+      "hostEmoji": "🎧",
+      "viewers": "8.9万",
+      "colors": [
+        4278237396,
+        4281356286
+      ],
+      "productIds": [
+        2,
+        4,
+        7,
+        9
+      ],
+      "notice": "这个价格，连我都想给自己来一台。"
+    },
+    {
+      "title": "睡衣家居服专场",
+      "host": "桃子",
+      "hostEmoji": "🛌",
+      "viewers": "3.2万",
+      "colors": [
+        4294217649,
+        4287505578
+      ],
+      "productIds": [
+        13,
+        19,
+        33,
+        34
+      ],
+      "notice": "穿上就不想出门，适合周末躺平人类。"
+    },
+    {
+      "title": "白玉楼美妆间",
+      "host": "幽幽子",
+      "hostEmoji": "💄",
+      "viewers": "21.4万",
+      "colors": [
+        4289956095,
+        4293673082
+      ],
+      "productIds": [
+        42,
+        44,
+        46,
+        47
+      ],
+      "notice": "今天的妆，是为不用上班的自己画的。"
+    },
+    {
+      "title": "宠物也解压",
+      "host": "喵老板",
+      "hostEmoji": "🐱",
+      "viewers": "1.7万",
+      "colors": [
+        4284922730,
+        4280723098
+      ],
+      "productIds": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "notice": "猫在睡觉，我在上链接。"
+    }
+  ],
+  "seckillIds": [
+    1,
+    2,
+    4,
+    10,
+    14,
+    15,
+    22,
+    23,
+    27,
+    28,
+    50,
+    52
+  ],
+  "hotSearches": [
+    "解压捏捏乐",
+    "电子木鱼",
+    "百亿补贴",
+    "螺蛳粉",
+    "电子榨菜",
+    "夸夸群",
+    "一夜暴富盲盒",
+    "大耳狗"
+  ]
+}
