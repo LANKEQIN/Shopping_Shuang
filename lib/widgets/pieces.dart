@@ -103,7 +103,7 @@ class OrigPrice extends StatelessWidget {
 }
 
 class MiniTag extends StatelessWidget {
-  const MiniTag(this.text, {super.key, this.color, this.filled = false});
+  const MiniTag(this.text, {super.key, this.color, this.filled = true});
 
   final String text;
   final Color? color;
@@ -115,14 +115,106 @@ class MiniTag extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1.5),
       decoration: BoxDecoration(
-        color: filled ? c.withValues(alpha: 0.1) : Colors.transparent,
-        border: Border.all(color: c.withValues(alpha: 0.45), width: 0.7),
-        borderRadius: BorderRadius.circular(4),
+        color: filled ? c.withValues(alpha: 0.09) : Colors.transparent,
+        border: filled
+            ? null
+            : Border.all(color: c.withValues(alpha: 0.45), width: 0.7),
+        borderRadius: BorderRadius.circular(3),
       ),
-      child: Text(text, style: TextStyle(fontSize: 9, color: c, height: 1.2)),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 9,
+          color: c,
+          height: 1.2,
+          fontWeight: filled ? FontWeight.w600 : null,
+        ),
+      ),
     );
   }
 }
+
+/// 商品图左上角的实心促销角标：补贴黑金、秒杀红金、自营红底都走这里。
+class PromoBadge extends StatelessWidget {
+  const PromoBadge({
+    super.key,
+    required this.text,
+    required this.colors,
+    this.fg = Colors.white,
+  });
+
+  final String text;
+  final List<Color> colors;
+  final Color fg;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2.5),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: colors),
+        borderRadius: const BorderRadius.only(
+          bottomRight: Radius.circular(7),
+        ),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 9,
+          color: fg,
+          fontWeight: FontWeight.w700,
+          height: 1.25,
+        ),
+      ),
+    );
+  }
+}
+
+/// 抢购进度条：制造「再不买就没了」的紧迫感。
+class SaleProgress extends StatelessWidget {
+  const SaleProgress({super.key, required this.percent});
+
+  final double percent;
+
+  @override
+  Widget build(BuildContext context) {
+    final palette = SkinPalette.of(context);
+    final pct = percent.clamp(0.0, 1.0);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(3),
+          child: LinearProgressIndicator(
+            value: pct,
+            minHeight: 5,
+            backgroundColor: palette.fill,
+            valueColor: AlwaysStoppedAnimation<Color>(palette.promoHot),
+          ),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          '已抢 ${(pct * 100).round()}%',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontSize: 8.5,
+            color: palette.promoHot,
+            height: 1.2,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// 确定性的「正在看」人数，避免随机值导致测试与 golden 抖动。
+int watchCountOf(Product p) => 60 + (p.id * 37) % 480;
+
+/// 确定性的抢购进度，落在 55%–95%。
+double saleProgressOf(Product p) => 0.55 + ((p.id * 13) % 41) / 100;
 
 /// 九大分类的本地插画资产。缺失或加载失败时自动回退到渐变 + Emoji。
 const Map<String, String> kCategoryArt = {
@@ -330,12 +422,17 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = SkinPalette.of(context);
-    final gray = TextStyle(color: palette.textTertiary, fontSize: 10);
-    final art = ProductArt(product: product, radius: 0);
+    final gray = TextStyle(
+      color: palette.textTertiary,
+      fontSize: 9.5,
+      height: 1.2,
+    );
+    final art = ProductArt(product: product, radius: 0, badge: false);
+    final showProgress = product.subsidy || product.tags.contains('9.9包邮');
     return Semantics(
       button: true,
       label:
-          '${product.name}，到手价${money(product.price)}元，'
+          '${product.name}，券后价${money(product.price)}元，'
           '${product.store}，已售${product.sold}万件',
       onTap: onTap,
       child: ExcludeSemantics(
@@ -353,12 +450,89 @@ class ProductCard extends StatelessWidget {
               children: [
                 SizedBox(
                   height: artHeight,
-                  child: heroTag == null
-                      ? art
-                      : Hero(tag: heroTag!, child: art),
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      heroTag == null ? art : Hero(tag: heroTag!, child: art),
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        height: 36,
+                        child: IgnorePointer(
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Colors.black.withValues(alpha: 0),
+                                  Colors.black.withValues(alpha: 0.48),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: _artBadge(palette),
+                      ),
+                      Positioned(
+                        left: 8,
+                        right: 8,
+                        bottom: 6,
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 3,
+                                vertical: 1,
+                              ),
+                              decoration: BoxDecoration(
+                                color: palette.promoHot,
+                                borderRadius: BorderRadius.circular(3),
+                              ),
+                              child: const Text(
+                                '券后',
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  color: Colors.white,
+                                  height: 1.2,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 4),
+                            Expanded(
+                              child: Text(
+                                '¥${money(product.price)}',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                  height: 1.1,
+                                  letterSpacing: -0.4,
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.black54,
+                                      blurRadius: 4,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(9, 8, 9, 10),
+                  padding: const EdgeInsets.fromLTRB(9, 7, 9, 9),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -368,7 +542,7 @@ class ProductCard extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 13,
-                          height: 1.3,
+                          height: 1.28,
                           fontWeight: FontWeight.w600,
                           color: palette.textPrimary,
                         ),
@@ -378,18 +552,41 @@ class ProductCard extends StatelessWidget {
                         spacing: 4,
                         runSpacing: 3,
                         children: [
-                          for (final tag in product.tags.take(2)) MiniTag(tag),
+                          for (final tag in product.tags.take(2))
+                            MiniTag(tag, color: _tagColor(tag, palette)),
                         ],
                       ),
-                      const SizedBox(height: 7),
+                      const SizedBox(height: 6),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          PriceText(product.price, size: 17),
+                          PriceText(
+                            product.price,
+                            size: 18,
+                            color: palette.promoHot,
+                          ),
                           const SizedBox(width: 4),
-                          Flexible(child: OrigPrice(product.originalPrice)),
+                          Flexible(
+                            child: OrigPrice(product.originalPrice, size: 9.5),
+                          ),
                         ],
                       ),
+                      const SizedBox(height: 1),
+                      Text(
+                        '省 ¥${money(product.discountAmount)}',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 9,
+                          color: palette.promoHot,
+                          fontWeight: FontWeight.w600,
+                          height: 1.2,
+                        ),
+                      ),
+                      if (showProgress) ...[
+                        const SizedBox(height: 5),
+                        SaleProgress(percent: saleProgressOf(product)),
+                      ],
                       const SizedBox(height: 5),
                       Row(
                         children: [
@@ -397,12 +594,12 @@ class ProductCard extends StatelessWidget {
                             Container(
                               margin: const EdgeInsets.only(right: 4),
                               padding: const EdgeInsets.symmetric(
-                                horizontal: 4,
+                                horizontal: 3.5,
                                 vertical: 1,
                               ),
                               decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.primary,
-                                borderRadius: BorderRadius.circular(3),
+                                color: palette.promoHot,
+                                borderRadius: BorderRadius.circular(2),
                               ),
                               child: const Text(
                                 '自营',
@@ -410,6 +607,7 @@ class ProductCard extends StatelessWidget {
                                   fontSize: 8,
                                   color: Colors.white,
                                   height: 1.2,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
@@ -421,9 +619,20 @@ class ProductCard extends StatelessWidget {
                               style: gray,
                             ),
                           ),
-                          const SizedBox(width: 4),
-                          Text('已拼${product.sold}万+', style: gray),
+                          const SizedBox(width: 3),
+                          Text('已拼 ${product.sold}万+', style: gray),
                         ],
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        '${watchCountOf(product)} 人正在看',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 9,
+                          color: palette.promoHot.withValues(alpha: 0.8),
+                          height: 1.2,
+                        ),
                       ),
                     ],
                   ),
@@ -434,6 +643,38 @@ class ProductCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _artBadge(SkinPalette palette) {
+    if (product.subsidy) {
+      return PromoBadge(
+        text: '百亿补贴',
+        colors: [palette.promoInk, palette.promoInk],
+        fg: palette.promoInkText,
+      );
+    }
+    if (product.tags.contains('9.9包邮')) {
+      return PromoBadge(
+        text: '9.9包邮',
+        colors: [palette.promoHot, palette.promoGold],
+      );
+    }
+    return PromoBadge(
+      text: product.selfRun ? '自营' : '包邮',
+      colors: product.selfRun
+          ? [palette.promoHot, palette.promoHot]
+          : [palette.promoHot, palette.promoGold],
+    );
+  }
+
+  Color _tagColor(String tag, SkinPalette palette) {
+    if (tag == '百亿补贴') {
+      return palette.dark ? palette.promoInkText : palette.promoInk;
+    }
+    if (tag == '自营' || tag == '包邮' || tag == '9.9包邮') {
+      return palette.promoHot;
+    }
+    return palette.textTertiary;
   }
 }
 
@@ -756,7 +997,7 @@ class ProductMasonry extends StatelessWidget {
     var rh = 0.0;
     for (final p in products) {
       final artHeight = 142.0 + (p.id % 3) * 24;
-      final estimate = artHeight + 92;
+      final estimate = artHeight + 118;
       if (lh <= rh) {
         left.add(p);
         lh += estimate;

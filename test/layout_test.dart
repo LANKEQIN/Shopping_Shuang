@@ -9,6 +9,7 @@ import 'package:shoping_shuang/pages/category_page.dart';
 import 'package:shoping_shuang/pages/checkout_page.dart';
 import 'package:shoping_shuang/pages/cut_price_page.dart';
 import 'package:shoping_shuang/pages/favorites_page.dart';
+import 'package:shoping_shuang/pages/followed_stores_page.dart';
 import 'package:shoping_shuang/pages/group_buy_page.dart';
 import 'package:shoping_shuang/pages/home_page.dart';
 import 'package:shoping_shuang/pages/live_pages.dart';
@@ -20,6 +21,7 @@ import 'package:shoping_shuang/pages/reports_page.dart';
 import 'package:shoping_shuang/pages/search_page.dart';
 import 'package:shoping_shuang/pages/seckill_page.dart';
 import 'package:shoping_shuang/pages/settings_page.dart';
+import 'package:shoping_shuang/pages/store_page.dart';
 import 'package:shoping_shuang/theme.dart';
 
 import 'helpers.dart';
@@ -50,7 +52,9 @@ void main() {
     'benefitsMember': () => const BenefitsPage(initialTab: 3),
     'groupBuy': () => const GroupBuyPage(),
     'category': () => const CategoryPage(),
+    'store': () => StorePage(store: prod(1).store),
     'favorites': () => const FavoritesPage(),
+    'followedStores': () => const FollowedStoresPage(),
     'reports': () => const ReportsPage(),
     'afterSale': () => const AfterSalePage(),
   };

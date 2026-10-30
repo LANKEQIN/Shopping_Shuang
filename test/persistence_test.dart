@@ -30,6 +30,7 @@ void main() {
     AppState.instance.pushHistory('测试关键词');
     AppState.instance.setSoundsEnabled(false);
     AppState.instance.setFollowedLive(true);
+    AppState.instance.toggleStoreFollowed(prod(1).store);
     final order = AppState.instance.createOrder([
       OrderItem(product: prod(1), qty: 1, price: prod(1).price),
     ], prod(1).price);
@@ -42,6 +43,7 @@ void main() {
     expect(AppState.instance.coupons, 8);
     expect(AppState.instance.soundsEnabled, isFalse);
     expect(AppState.instance.followedLive, isTrue);
+    expect(AppState.instance.isStoreFollowed(prod(1).store), isTrue);
     expect(AppState.instance.searchHistory.first, '测试关键词');
     final restored = AppState.instance.cart
         .where((e) => e.product.id == 70)
@@ -82,6 +84,7 @@ void main() {
     expect(AppState.instance.searchHistory, ['旧关键词']);
     expect(AppState.instance.coupons, 3);
     expect(AppState.instance.animationsEnabled, isTrue);
+    expect(AppState.instance.isStoreFollowed(prod(1).store), isFalse);
     expect(AppState.instance.orders, isEmpty);
   });
 

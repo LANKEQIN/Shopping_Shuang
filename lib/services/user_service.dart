@@ -13,6 +13,9 @@ class UserService extends ChangeNotifier {
   int points = 666;
   int growth = 0;
 
+  /// 已关注的店铺名，与商品目录中的 `Product.store` 逐字对应。
+  final Set<String> followedStores = {};
+
   final Set<String> checkInDates = {};
 
   String dailyDate = '';
@@ -50,6 +53,16 @@ class UserService extends ChangeNotifier {
     if (followedLive == value) return;
     followedLive = value;
     notifyListeners();
+  }
+
+  bool isStoreFollowed(String store) => followedStores.contains(store);
+
+  /// 切换店铺关注状态，返回切换后是否处于关注状态。
+  bool toggleStoreFollowed(String store) {
+    final added = followedStores.add(store);
+    if (!added) followedStores.remove(store);
+    notifyListeners();
+    return added;
   }
 
   void addPoints(int n) {
@@ -217,6 +230,7 @@ class UserService extends ChangeNotifier {
     'balance': balance,
     'nickname': nickname,
     'followedLive': followedLive,
+    'followedStores': followedStores.toList(),
     'points': points,
     'growth': growth,
     'checkIns': checkInDates.toList(),
@@ -263,6 +277,9 @@ class UserService extends ChangeNotifier {
     final name = data['nickname'];
     nickname = (name is String && name.trim().isNotEmpty) ? name : '幽幽子大人';
     followedLive = data['followedLive'] == true;
+    followedStores
+      ..clear()
+      ..addAll(_stringSet(data['followedStores']));
     points = _nonNegativeInt(data['points'], 666);
     growth = _nonNegativeInt(data['growth'], 0);
 
@@ -354,6 +371,7 @@ class UserService extends ChangeNotifier {
     balance = 9999.00;
     nickname = '幽幽子大人';
     followedLive = false;
+    followedStores.clear();
     points = 666;
     growth = 120;
     checkInDates.clear();

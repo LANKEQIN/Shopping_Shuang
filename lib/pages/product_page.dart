@@ -7,9 +7,9 @@ import '../state.dart';
 import '../theme.dart';
 import '../widgets/pieces.dart';
 import 'cart_page.dart';
-import 'category_page.dart';
 import 'checkout_page.dart';
 import 'group_buy_page.dart';
+import 'store_page.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key, required this.product, this.heroTag});
@@ -436,7 +436,7 @@ class _ProductPageState extends State<ProductPage> {
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (_) =>
-                                CategoryPage(store: product.store),
+                                StorePage(store: product.store),
                           ),
                         ),
                         style: OutlinedButton.styleFrom(
@@ -1073,7 +1073,15 @@ class _ProductPageState extends State<ProductPage> {
       child: Row(
         children: [
           iconItem(Icons.headset_mic_outlined, '客服'),
-          iconItem(Icons.storefront_outlined, '店铺'),
+          iconItem(
+            Icons.storefront_outlined,
+            '店铺',
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => StorePage(store: product.store),
+              ),
+            ),
+          ),
           iconItem(
             Icons.shopping_cart_outlined,
             '购物车',

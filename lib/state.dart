@@ -350,6 +350,8 @@ class AppState extends ChangeNotifier {
 
   List<Coupon> get couponWallet => couponService.couponWallet;
 
+  List<CouponOffer> get couponOffers => couponService.offers;
+
   int get coupons => couponService.coupons;
 
   List<Coupon> get validCoupons => couponService.validCoupons;
@@ -380,6 +382,13 @@ class AppState extends ChangeNotifier {
   bool get followedLive => userService.followedLive;
 
   void setFollowedLive(bool value) => userService.setFollowedLive(value);
+
+  Set<String> get followedStores => userService.followedStores;
+
+  bool isStoreFollowed(String store) => userService.isStoreFollowed(store);
+
+  bool toggleStoreFollowed(String store) =>
+      userService.toggleStoreFollowed(store);
 
   int get points => userService.points;
 

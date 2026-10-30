@@ -35,7 +35,7 @@ void main() {
   test('内置 catalog.json 可加载并通过校验', () async {
     final catalog = await const AssetCatalogSource().load();
     expect(catalog, isNotNull);
-    expect(catalog!.products, hasLength(70));
+    expect(catalog!.products, hasLength(150));
     expect(catalog.banners, hasLength(4));
     expect(catalog.liveRooms, hasLength(6));
     expect(catalog.seckillIds, hasLength(12));
@@ -116,7 +116,7 @@ void main() {
     final source = _TestCatalogSource(Catalog.fromSeed());
     await AppState.instance.init(storage: storage, catalogSource: source);
     expect(AppState.instance.catalogUsingCustom, isFalse);
-    expect(AppState.instance.products, hasLength(70));
+    expect(AppState.instance.products, hasLength(150));
 
     final result = await AppState.instance.importCatalog(_customCatalogJson());
     expect(result.ok, isTrue);
@@ -134,7 +134,7 @@ void main() {
 
     await AppState.instance.resetAll();
     expect(AppState.instance.catalogUsingCustom, isFalse);
-    expect(AppState.instance.products, hasLength(70));
+    expect(AppState.instance.products, hasLength(150));
   });
 
   testWidgets('设置页商品数据入口可打开导出与导入弹窗', (tester) async {

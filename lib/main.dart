@@ -165,6 +165,19 @@ class _RootShellState extends State<RootShell> {
                                                 ? cfg.primary
                                                 : cfg.navFg,
                                           ),
+                                          if (i == 1)
+                                            Positioned(
+                                              right: -3,
+                                              top: -2,
+                                              child: Container(
+                                                width: 7,
+                                                height: 7,
+                                                decoration: BoxDecoration(
+                                                  color: cfg.primary,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                              ),
+                                            ),
                                           if (i == 2 && app.cartCount > 0)
                                             Positioned(
                                               right: -10,

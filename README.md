@@ -13,7 +13,7 @@
 - 支持淘宝橙 / 京东红 / 拼多多红 / 抖音黑四套皮肤，一键切换全局主题，抖音皮肤为完整暗色
 - 购物车、订单、皮肤、搜索历史、优惠券与体验设置本地持久化，重启不丢
 - 九大分类本地插画 + Emoji 兜底，断网也有稳定视觉
-- 已固化 273 项自动化测试（冒烟、布局、持久化、玩法、服务层、商品目录、关键页面 golden）
+- 已固化 301 项自动化测试（冒烟、布局、持久化、玩法、服务层、商品目录、关键页面 golden）
 - 已接入 GitHub Actions：analyze / test / APK / Web 构建产物，另提供手动触发的安卓端到端测试
 - 已构建安卓 APK，同时保留 Flutter Web 版本用于预览
 
@@ -37,9 +37,10 @@
 | 抽免单 | 八格幸运转盘、权重奖池与概率公示、保底机制、每日任务、免单记录、晒单卡片 |
 | 直播带货 | 直播列表、直播间弹幕、飘心、关注、讲解卡轮播、商品上下架、福袋倒计时、点赞榜、沉浸全屏、主播切换、购物袋、一键加购、进场动画 |
 | 商品体验 | 类目页（分类 / 店铺 / 筛选 / 排序）、收藏与浏览足迹、评价发布、商品问答、相似推荐 |
+| 店铺主页 | 店铺评分 / 商品数 / 销量 / 粉丝派生档案、关注与取关（持久化）、我的关注店铺列表（进店 / 取关 / 空状态）、店铺公告、店内全部 / 热销 / 上新 / 9.9 包邮筛选、商品瀑布流与空状态 |
 | 订单中心 | 状态筛选、待付款倒计时与超时取消、稍后支付、申请退款、售后记录、物流轨迹动画、发票申请与记录、评价、再来一单、删除订单 |
 | 解压报告 | 成就墙与解锁进度、年度账单、情绪价值指数、近 7 天消费曲线、分类偏好、每日解压任务 |
-| 我的 | 会员信息与等级、资产卡、订单快捷入口、拼团 / 福利 / 报告 / 收藏入口、解压特权、平台皮肤切换、地址 / 客服 / 发票售后入口、设置入口 |
+| 我的 | 会员信息与等级、资产卡、订单快捷入口、拼团 / 福利 / 报告 / 收藏 / 关注店铺入口、解压特权、平台皮肤切换、地址 / 客服 / 发票售后入口、设置入口 |
 | 设置与反馈 | 动效 / 触觉 / 音效独立开关、清除本地数据、关于信息、数据本地持久化与 schema v2 迁移 |
 | 商品数据 | 商品 / Banner / 直播间 / 秒杀清单迁移到 `assets/data/catalog.json`，支持导出、粘贴导入自定义商品包、恢复内置数据 |
 | 全局体验 | 自定义 Toast、全屏撒花庆祝、倒计时组件、四套皮肤（含抖音全暗色）、无障碍语义、320–430 宽度与字体缩放适配、宽屏 Web 手机框预览 |
@@ -67,7 +68,7 @@
 | 数据 | `assets/data/catalog.json` 商品目录资产 + `CatalogSource` 数据源抽象（内置资产 / 模拟远端可注入），`lib/data.dart` 作为回退种子数据；无网络请求、无后端 |
 | 持久化 | `AppRepository` + `Storage` 抽象（测试可注入 `MemoryStorage`），schema version 与迁移；自定义商品目录独立键 |
 | 图片 | 九大分类本地插画（512×512 JPEG，约 150 KB）+ Emoji 兜底，断网可用 |
-| 测试 | `flutter_test`：273 项（冒烟、布局矩阵、持久化、玩法、服务层、商品目录）+ 5 张关键页面 golden + `integration_test` 端到端脚本 |
+| 测试 | `flutter_test`：301 项（冒烟、布局矩阵、持久化、玩法、服务层、商品目录）+ 5 张关键页面 golden + `integration_test` 端到端脚本 |
 | 持续集成 | GitHub Actions：Windows runner 执行 analyze / test（golden 基线一致），Linux runner 构建 APK 与 Web 并上传产物 |
 | 依赖 | Flutter SDK、模板自带 `cupertino_icons`、`shared_preferences`、`integration_test`（dev） |
 
@@ -105,7 +106,7 @@ flutter build web --release
 
 ```bash
 flutter analyze                       # 静态分析，要求 0 issue
-flutter test                          # 273 项单元 / 组件 / golden 测试
+flutter test                          # 301 项单元 / 组件 / golden 测试
 flutter test integration_test/app_test.dart -d <deviceId>
 # 端到端：浏览 → 加购 → 用券 → 支付 → 退款（需要真机或模拟器）
 ```
@@ -131,7 +132,7 @@ lib/
 ├── theme.dart                   # 四套皮肤 SkinConfig、SkinPalette 语义色、全局 ThemeData（含暗色）
 ├── models.dart                  # 商品、Banner、直播间、订单、优惠券、拼团、砍价、抽奖、售后等模型
 ├── catalog.dart                 # 商品目录模型 + JSON 校验 + CatalogSource（内置资产 / 模拟远端）
-├── data.dart                    # 回退种子数据：70 件商品、Banner、直播间、热搜、券模板、任务、成就
+├── data.dart                    # 回退种子数据：150 件商品、Banner、直播间、热搜、券模板、任务、成就
 ├── state.dart                   # AppState：组合根与门面（服务装配、跨域编排、通知与防抖落盘）
 ├── log.dart                     # 本地日志分级（内存环形缓冲，不联网、不集成崩溃监控）
 ├── storage.dart                 # Storage 抽象、SharedPrefsStorage、MemoryStorage
@@ -153,6 +154,8 @@ lib/
 │   ├── home_page.dart           # 首页（分页懒加载、Hero、玩法入口）
 │   ├── search_page.dart         # 搜索、排序与筛选结果
 │   ├── category_page.dart       # 类目页（分类 / 店铺 / 筛选 / 排序）
+│   ├── store_page.dart          # 店铺主页（档案、关注、店内筛选与瀑布流）
+│   ├── followed_stores_page.dart # 我的关注店铺列表（进店 / 取关 / 空状态）
 │   ├── product_page.dart        # 商品详情、评价发布、问答、收藏、拼团入口
 │   ├── cart_page.dart           # 购物车、满减凑单计算器
 │   ├── checkout_page.dart       # 确认订单（选券）+ 收银台 + 稍后支付 + 支付成功
@@ -204,7 +207,7 @@ integration_test/
 - `AppState` 只保留组合根与门面职责：装配服务、串联跨域流程（下单奖励、签到发券、积分兑换、退款回余额）、转发通知与 300ms 防抖落盘。页面继续通过 `AppState.instance` 访问，调用面保持稳定。
 - `services/` 按业务域拆成购物车、订单、优惠券、用户、玩法、偏好、商品目录 7 个 `ChangeNotifier`；服务之间不互相持有，跨域动作通过回调由 `AppState` 编排。
 - `repositories/` 负责数据来源：`AppRepository` 管本地状态键与迁移，`CatalogRepository` 管商品目录（自定义导入 > 数据源 > 种子回退）。
-- 状态管理方案经过评估后继续使用 `ChangeNotifier`：项目已有 273 项测试与大量 `ListenableBuilder` 调用，引入 Riverpod / Provider 的收益不足以覆盖迁移风险，因此不引入第三方状态库。
+- 状态管理方案经过评估后继续使用 `ChangeNotifier`：项目已有 301 项测试与大量 `ListenableBuilder` 调用，引入 Riverpod / Provider 的收益不足以覆盖迁移风险，因此不引入第三方状态库。
 
 ### 本地持久化与数据迁移
 
@@ -229,7 +232,7 @@ integration_test/
 - `lib/log.dart` 提供 debug / info / warn / error 四级本地日志，内存环形缓冲最多 200 条；只用于本地问题定位，不上传、不联网、不集成崩溃监控 SDK。
 - `.github/workflows/ci.yml` 在 push / PR 时执行 analyze、test 与 APK / Web 构建，构建产物作为 artifact 上传。
 - `.github/workflows/integration.yml` 手动触发安卓模拟器端到端测试（浏览 → 加购 → 用券 → 支付 → 退款）。
-- 质量门禁：analyze 0 issue、273 项测试全绿、golden 不变、布局矩阵无溢出。
+- 质量门禁：analyze 0 issue、301 项测试全绿、golden 不变、布局矩阵无溢出。
 
 ### 商品视觉
 
@@ -267,7 +270,7 @@ integration_test/
 
 ## 七、数据与隐私
 
-- 商品共 70 件，覆盖数码、服饰、美食、家居、美妆、潮玩、运动、宠物、解压服务九类，价格 0.99 元至 12999 元。
+- 商品共 150 件，覆盖数码、服饰、美食、家居、美妆、潮玩、运动、宠物、解压服务九类，价格 0.99 元至 12999 元；共 66 家店铺、456 个 SKU。
 - 直播数据 6 个房间；Banner 4 张；秒杀商品 12 件。
 - 收货人固定为「幽幽子大人」，地址为虚构的「幻想乡 · 白玉楼」。
 - 不采集任何个人信息，不发起网络请求，不集成统计、广告或支付 SDK。

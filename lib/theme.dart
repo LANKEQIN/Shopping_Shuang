@@ -118,6 +118,11 @@ class SkinPalette extends ThemeExtension<SkinPalette> {
     required this.icon,
     required this.iconDisabled,
     required this.inverseText,
+    required this.promoHot,
+    required this.promoGold,
+    required this.promoInk,
+    required this.promoInkText,
+    required this.promoCream,
     required this.dark,
   });
 
@@ -134,6 +139,22 @@ class SkinPalette extends ThemeExtension<SkinPalette> {
   final Color icon;
   final Color iconDisabled;
   final Color inverseText;
+
+  /// 活动红：促销角标、券面额、进度条起点。
+  final Color promoHot;
+
+  /// 活动金：补贴价、渐变终点。
+  final Color promoGold;
+
+  /// 补贴黑金底色。
+  final Color promoInk;
+
+  /// 黑金底上的金色文字。
+  final Color promoInkText;
+
+  /// 券区 / 活动浅底。
+  final Color promoCream;
+
   final bool dark;
 
   static const SkinPalette light = SkinPalette(
@@ -150,6 +171,11 @@ class SkinPalette extends ThemeExtension<SkinPalette> {
     icon: Color(0xFF555555),
     iconDisabled: Color(0xFFCCCCCC),
     inverseText: Colors.white,
+    promoHot: Color(0xFFE8392A),
+    promoGold: Color(0xFFFFC53D),
+    promoInk: Color(0xFF17171B),
+    promoInkText: Color(0xFFFFD54F),
+    promoCream: Color(0xFFFFF4E5),
     dark: false,
   );
 
@@ -167,6 +193,11 @@ class SkinPalette extends ThemeExtension<SkinPalette> {
     icon: Color(0xFFC5C5CF),
     iconDisabled: Color(0xFF55555F),
     inverseText: Colors.white,
+    promoHot: Color(0xFFF0453A),
+    promoGold: Color(0xFFF7C948),
+    promoInk: Color(0xFF0B0B10),
+    promoInkText: Color(0xFFFFD54F),
+    promoCream: Color(0xFF2A2119),
     dark: true,
   );
 
@@ -188,6 +219,11 @@ class SkinPalette extends ThemeExtension<SkinPalette> {
     Color? icon,
     Color? iconDisabled,
     Color? inverseText,
+    Color? promoHot,
+    Color? promoGold,
+    Color? promoInk,
+    Color? promoInkText,
+    Color? promoCream,
     bool? dark,
   }) {
     return SkinPalette(
@@ -204,6 +240,11 @@ class SkinPalette extends ThemeExtension<SkinPalette> {
       icon: icon ?? this.icon,
       iconDisabled: iconDisabled ?? this.iconDisabled,
       inverseText: inverseText ?? this.inverseText,
+      promoHot: promoHot ?? this.promoHot,
+      promoGold: promoGold ?? this.promoGold,
+      promoInk: promoInk ?? this.promoInk,
+      promoInkText: promoInkText ?? this.promoInkText,
+      promoCream: promoCream ?? this.promoCream,
       dark: dark ?? this.dark,
     );
   }
@@ -225,6 +266,11 @@ class SkinPalette extends ThemeExtension<SkinPalette> {
       icon: Color.lerp(icon, other.icon, t)!,
       iconDisabled: Color.lerp(iconDisabled, other.iconDisabled, t)!,
       inverseText: Color.lerp(inverseText, other.inverseText, t)!,
+      promoHot: Color.lerp(promoHot, other.promoHot, t)!,
+      promoGold: Color.lerp(promoGold, other.promoGold, t)!,
+      promoInk: Color.lerp(promoInk, other.promoInk, t)!,
+      promoInkText: Color.lerp(promoInkText, other.promoInkText, t)!,
+      promoCream: Color.lerp(promoCream, other.promoCream, t)!,
       dark: t < 0.5 ? dark : other.dark,
     );
   }

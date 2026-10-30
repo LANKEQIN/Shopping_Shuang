@@ -9,6 +9,7 @@ import 'after_sale_page.dart';
 import 'benefits_page.dart';
 import 'cut_price_page.dart';
 import 'favorites_page.dart';
+import 'followed_stores_page.dart';
 import 'group_buy_page.dart';
 import 'live_pages.dart';
 import 'lottery_page.dart';
@@ -318,6 +319,17 @@ class MinePage extends StatelessWidget {
                       () => Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (_) => const FavoritesPage(),
+                        ),
+                      ),
+                    ),
+                    _tool(
+                      context,
+                      '🏬',
+                      '我的关注店铺',
+                      '${app.followedStores.length} 家',
+                      () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const FollowedStoresPage(),
                         ),
                       ),
                     ),

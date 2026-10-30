@@ -14,6 +14,9 @@ class CouponService extends ChangeNotifier {
 
   int get coupons => couponWallet.where((c) => !c.expired).length;
 
+  /// 领券中心的券模板，供首页券条等入口展示。
+  List<CouponOffer> get offers => couponOffers;
+
   List<Coupon> get validCoupons =>
       couponWallet.where((c) => !c.expired).toList();
 

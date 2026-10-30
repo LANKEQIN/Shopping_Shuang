@@ -21,12 +21,23 @@ void main() {
     await tester.pumpWidget(const ShuangGouApp());
     await tester.pumpAndSettle();
 
+    await tester.scrollUntilVisible(
+      find.text('猜你喜欢'),
+      320,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
     expect(find.text('猜你喜欢'), findsOneWidget);
 
-    // 下滑到瀑布流首件商品，进入商品详情
-    await tester.drag(find.byType(Scrollable).first, const Offset(0, -420));
+    // 继续下滑到瀑布流首件商品，进入商品详情
+    final card = find.byType(ProductCard).first;
+    await tester.scrollUntilVisible(
+      card,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     await tester.pumpAndSettle();
-    await tester.tap(find.byType(ProductCard).first);
+    await tester.tap(card);
     await tester.pumpAndSettle();
     expect(find.text('商品详情'), findsOneWidget);
 
